@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pixel Jumper: Arcade Odyssey</title>
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      background: #090912;
+      display: grid;
+      place-items: center;
+      background:
+        radial-gradient(circle at top, rgba(85, 255, 255, 0.08), transparent 40%),
+        linear-gradient(180deg, #090912 0%, #020204 100%);
+      font-family: "DM Sans", Arial, sans-serif;
+      overflow: hidden;
+
+    }
+
+    #cabinet-shell {
+    position: relative;
+    width: min(96vw, calc(96vh * 4 / 3));
+    height: min(96vh, calc(96vw * 3 / 4));
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    border: 4px solid #555555;
+    background: linear-gradient(180deg, rgba(255,255,255,0.05), transparent 10%), linear-gradient(180deg, #151521, #06060c);
+    box-shadow: 0 0 0 3px #000000, 0 18px 40px rgba(0,0,0,0.45);
+    }
+
+    #screen-bezel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 0.5rem;
+    border: 6px solid #0a0a0a;
+    border-radius: 12px;
+    background: #000000;
+    box-shadow: inset 0 0 30px rgba(255,255,255,0.08);
+    }
+    
+    #game-shell {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #000000;
+    }   
+
+    canvas {
+      width: 100%;
+      height: 100%;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+    }
+
+    #crt-overlay {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 10;
+      mix-blend-mode: screen;
+    }
+
+    #cabinet-label {
+      position: absolute;
+      bottom: 0.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.82rem;
+      letter-spacing: 0.24rem;
+      text-transform: uppercase;
+      color: #aaaaaa;
+    }
+  </style>
+</head>
+<body>
+  <div id="cabinet-shell">
+    <div id="screen-bezel">
+      <div id="game-shell">
+        <canvas id="crt-overlay"></canvas>
+      </div>
+    </div>
+    <div id="cabinet-label">Pixel Jumper: Arcade Odyssey</div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/phaser@3.80.1/dist/phaser.min.js"></script>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
