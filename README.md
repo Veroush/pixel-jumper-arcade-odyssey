@@ -8,7 +8,7 @@ A retro 80s arcade platformer built with **Phaser 3** and vanilla JavaScript. Ho
 
 ## 🎮 Play It
 
-**Live:** [your-username.github.io/pixel-jumper-arcade-odyssey](https://your-username.github.io/pixel-jumper-arcade-odyssey)
+**Live:** [your-username.github.io/pixel-jumper-arcade-odyssey](https:/Veroush.github.io/pixel-jumper-arcade-odyssey)
 
 **Local:**
 ```bash
